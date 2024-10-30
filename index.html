@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diwali Bazar</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    // JavaScript to calculate the countdown to Diwali (assuming Diwali falls on Nov 12, 2024)
+    function updateCountdown() {
+      const diwaliDate = new Date('2024-10-31T00:00:00').getTime();
+      const now = new Date().getTime();
+      const distance = diwaliDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = 
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      // When the countdown is over, display a message
+      if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("countdown").innerHTML = "Happy Diwali!";
+      }
+    }
+
+    const countdownInterval = setInterval(updateCountdown, 1000);
+  </script>
+</head>
+<body >
+
+    <!-- Navbar -->
+    <header class="flex justify-between items-center p-5 bg-yellow-200 text-yellow-950">
+      <h1 class="text-5xl font-semibold">Diwali Bazar</h1>
+      <nav>
+        <ul class="flex space-x-6 text-xl">
+          <li><a href="#"class="hover:text-orange-300">HOME</a></li>
+          <li><a href="#products" class="hover:text-orange-300">PRODUCTS</a></li>
+          <li><a href="#rangoli" class="hover:text-orange-300">RANGOLI DESIGNS</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+    <!-- Combined Countdown and Hero Section -->
+    <section class="flex flex-col items-center justify-center py-12  text-center space-y-6 bg-gradient-to-r from-yellow-100 via-orange-200 to-red-200">
+      <div>
+        <h2 class="text-3xl font-bold text-gray-800 mb-2">Countdown to Diwali</h2>
+        <p id="countdown" class="text-2xl font-semibold text-purple-700"></p>
+      </div>
+      <div>
+        <h2 class="text-5xl font-bold text-gray-800 mb-4">Brighten Your Diwali </h2>
+        <p class="text-xl">With Stunning Decorations and Traditional Essentials</p>
+        <div class="mt-6">
+          <a href="#products" class="px-6 py-3 bg-purple-700 text-white rounded-md hover:bg-purple-800">Shop Now</a>
+        </div>
+      </div>
+    </section>
+  
+    <!-- About Us Section -->
+    <section id="about" class="py-16 px-6  text-center bg-gradient-to-r from-yellow-100 via-orange-200 to-red-200">
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-4xl font-semibold mb-6">About Us</h3>
+        <p class="text-lg text-gray-700">At Diwali Bazar, we bring you the finest selection of traditional Diwali products. From diyas to decorations, our goal is to make your Diwali celebrations bright and memorable.</p>
+      </div>
+    </section>
+  
+    <!-- Products Section -->
+    <section id="products" class="py-16 px-6 bg-gradient-to-r from-yellow-100 via-orange-200 to-red-200 text-center">
+      <div>
+        <h3 class="text-4xl font-semibold mb-6">Products</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <!-- Product Items -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="./img/2.png" alt="Diya" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-xl">Diya</h4>
+            <p class="text-gray-600 mt-2">Traditional hand-painted diyas for Diwali.</p>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="./img/3.jpg" alt="Lights" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-xl">Lights</h4>
+            <p class="text-gray-600 mt-2">Beautiful string lights to illuminate your home.</p>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="./img/4.jpg" alt="Decoration Items" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-xl">Decoration Items</h4>
+            <p class="text-gray-600 mt-2">Unique decor items for a festive touch.</p>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="./img/5.jpg" alt="Sweets" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-xl">Sweets</h4>
+            <p class="text-gray-600 mt-2">Delicious traditional sweets for Diwali.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Rangoli Designs Section -->
+    <section id="rangoli" class="py-16 px-6 bg-gradient-to-r from-yellow-100 via-orange-200 to-red-200 text-center">
+      <div>
+        <h3 class="text-4xl font-semibold mb-6">Rangoli Designs</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <!-- Rangoli Items -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="./img/6.webp" alt="Flower Rangoli" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-xl">Flower Rangoli</h4>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="./img/7.jpg" alt="Peacock Rangoli" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-xl">Peacock Rangoli</h4>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="./img/8.webp" alt="Geometric Rangoli" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-xl">Geometric Rangoli</h4>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="./img/9.jpg" alt="Mandala Rangoli" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-xl">Mandala Rangoli</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Footer -->
+    <footer class="py-8 bg-yellow-200 text-yellow-950 text-center">
+      <p>&copy; 2024 Diwali Bazar. All Rights Reserved.</p>
+      <p>Crafted with ❤️ for Diwali Celebrations.</p>
+    </footer>
+  
+  </body>
+  </html>
